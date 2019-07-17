@@ -24,6 +24,12 @@ def convert_to_binary(number):
     return converted
 
 """
+Convert any number to binary numbering system
+"""
+def convert_any_number_to_binary(number):
+    print('Doing something')
+
+"""
 Testing
 """
 converted1 = convert_to_binary(2)
