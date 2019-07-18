@@ -1,38 +1,41 @@
+import sys
+
 """ 
 Convert a number less than or equal to 255 to 
 binary numbering system
 """
 def convert_to_binary(number):
-    # Number in binary
-    converted = ''
-
     # Powers of two from 7 to 0
     powers_of_two = [128, 64, 32, 16, 8, 4, 2, 1]
+
+    # Sum addens (it's to calculate the result)
+    addens = []
 
     # Rest of each powers_of_two element with number
     rest = number
 
-    for n in powers_of_two:
-        rest -= n  
+    while(rest != 0):
+        converted = ''
         
-        if rest >= 0:
-            converted += '1'
-        else:
-            rest += n
-            converted += '0'
+        for n in powers_of_two:
+            rest -= n  
+            
+            if rest >= 0:
+                converted += '1'
+            else:
+                rest += n
+                converted += '0'
 
-    return converted
+        addens.append(converted)
 
-"""
-Testing
-"""
-converted1 = convert_to_binary(2)
-converted2 = convert_to_binary(80)
-converted3 = convert_to_binary(105)
-converted4 = convert_to_binary(255)
+    return addens
 
-print('converted1 ->', converted1)
-print('converted2 ->', converted2)
-print('conterted3 ->', converted3)
-print('converted4 ->', converted4)
+number = int(sys.argv[1])
+addens = convert_to_binary(number)
 
+print('CONVERSION')
+print('----------')
+print('')
+
+for adden in addens:
+    print(adden)
