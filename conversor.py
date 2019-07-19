@@ -71,6 +71,10 @@ def sum(number1, number2):
 
 """ 
 Convert a decimal number to binary
+
+This function uses the method of successive 
+subtractions to convert the number to binary
+numbering system.
 """
 def convert_to_binary(number):
     # Powers of two from 7 to 0
